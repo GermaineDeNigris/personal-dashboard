@@ -1,4 +1,9 @@
-    fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=water&client_id=54aIZJPJRr2XLQw_72nDFVYvfa2lrplGNyslGHfYRqw")
+let lastWeatherFetch = 0;
+let lastBitcoinFetch = 0;
+const refreshInterval = 60 * 60 * 1000;
+
+
+fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=water&client_id=54aIZJPJRr2XLQw_72nDFVYvfa2lrplGNyslGHfYRqw")
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`
@@ -7,8 +12,19 @@
     .catch(err => {
        document.body.style.backgroundImage = `url("https://upload.wikimedia.org/wikipedia/commons/0/0e/Nesso_lago_di_como.jpg"`
     }) 
+    
+    function updateTime(){
+        const date = new Date()
+        const timeElement = document.getElementsByClassName("time")[0]
+        const userLocale = navigator.language
+        const options = { hour: "numeric", minute: "numeric" }
+        const formattedTime = date.toLocaleTimeString(userLocale, options)
+        timeElement.textContent = formattedTime
+    }
+    setInterval(updateTime, 1000)
 
-fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+// Bitcoin API
+    fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     .then(res => {
         if (!res.ok) {
             throw Error("Something went wrong")
@@ -28,20 +44,9 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
         </div>
         `
     })
-    .catch(err => console.error(err))
-    
+    .catch(err => console.error(err))   
 
-    function updateTime(){
-        const date = new Date()
-        const timeElement = document.getElementsByClassName("time")[0]
-        const userLocale = navigator.language
-        const options = { hour: "numeric", minute: "numeric" }
-        const formattedTime = date.toLocaleTimeString(userLocale, options)
-        timeElement.textContent = formattedTime
-    }
-    setInterval(updateTime, 1000)
-
-// geolocator / weather feature
+// geolocator / weather API
 navigator.geolocation.getCurrentPosition(position => {
 
     const latitude = position.coords.latitude
@@ -67,6 +72,27 @@ navigator.geolocation.getCurrentPosition(position => {
         .catch(err => console.error(err))
 })
 
+function updateWeatherAndBitcoinData() {
+    const currentTime = new Date().getTime()
+
+    // Check if it's time to refresh weather data
+    if (currentTime - lastWeatherFetch >= refreshInterval) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude
+            const longitude = position.coords.longitude
+            fetchWeatherData(latitude, longitude)
+            lastWeatherFetch = currentTime
+        })
+    }
+
+    if (currentTime - lastBitcoinFetch >= refreshInterval) {
+        fetchBitcoinData()
+        lastBitcoinFetch = currentTime
+    }
+}
+
 window.addEventListener('load', (event) => {
-    document.querySelector('#quote').style.opacity = '1';
+    document.querySelector('#quote').style.opacity = '1'
 })
+
+setInterval(updateWeatherAndBitcoinData, refreshInterval)
