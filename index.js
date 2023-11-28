@@ -43,7 +43,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
 
 // geolocator / weather feature
 navigator.geolocation.getCurrentPosition(position => {
-    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=8ed4c3b8dc623c8d2b8272a018c4d8a3`)
         .then(res => {
             if (!res.ok) {
                 throw Error("Weather data not available")
