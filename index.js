@@ -1,4 +1,4 @@
-fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=water-backgrounds")
+fetch("https://api.unsplash.com/photos/random?orientation=landscape&query=water&client_id=54aIZJPJRr2XLQw_72nDFVYvfa2lrplGNyslGHfYRqw")
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`
