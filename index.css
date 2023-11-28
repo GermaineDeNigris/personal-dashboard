@@ -40,10 +40,10 @@ h1.time {
     font-size: 8em;
     font-family: 'Montserrat', sans-serif;
     margin-top: 97px;
+    min-height: 240px;
 }
 
 #quote {
-    min-height: auto;
     margin-top: -152px;
     font-weight: 400;
     font-size: 2em;
