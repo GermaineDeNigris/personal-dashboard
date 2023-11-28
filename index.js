@@ -43,6 +43,10 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
 
 // geolocator / weather feature
 navigator.geolocation.getCurrentPosition(position => {
+
+    const latitude = position.coords.latitude
+    const longitude = position.coords.longitude 
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=982507f7ee87e5e3245f25253654ed1d`)
         .then(res => {
             if (!res.ok) {
