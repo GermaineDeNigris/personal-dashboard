@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.5em;
+    text-shadow: 0px 0px 30px rgb(96, 96, 95);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.top {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Mulish', sans-serif;
+
+}
+
+.center-content {
+    text-align: center;
+}
+
+h1.time {
+    font-size: 8em;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 97px;
+}
+
+#quote {
+    margin-top: -152px;
+    font-weight: 400;
+    font-size: 2em;
+    letter-spacing: .1rem;
+}
+
+div#crypto {
+    font-size: 1.5rem;
+    display: block;
+    flex-direction: column;
+    margin: -15 0 0 10px;
+}
+
+div#crypto-top {
+    display: flex;
+    align-items: center;
+    margin: 37px 0 0 20 ;
+}
+
+#bitcoin-title {
+    margin: 10px;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#top-weather {
+    display: flex;
+    align-items: center;
+    max-height: 110px;
+    margin: auto;
+}
+
+#temp {
+    font-size: 2em;
+    margin-right: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+#location {
+    margin: -15px 0 0 60px;
+}
