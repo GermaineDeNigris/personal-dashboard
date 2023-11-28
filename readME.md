@@ -1,5 +1,7 @@
 Personal Dashboard
 
+https://germaines-personal-dashboard.netlify.app/ 
+
 Description
 This Personal Dashboard is a dynamic, web-based interface designed to provide real-time information including cryptocurrency data, local weather, a digital clock, and a daily inspirational background. It utilizes various APIs to fetch real-time data, making it a practical tool for everyday use.
 
@@ -21,13 +23,10 @@ Setup and Installation
 To get this dashboard up and running on your local machine, follow these steps:
 
 Clone the Repository:
-bash
-Copy code
-<!-- git clone [repository URL] -->
+git clone https://github.com/GermaineDeNigris/personal-dashboard
+
 Navigate to Project Directory:
-bash
-Copy code
-cd [local repository]
+cd personal-dashboard
 
 Open in a Browser:
 Simply open the index.html file in your preferred web browser.
