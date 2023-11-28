@@ -50,7 +50,7 @@ h1.time {
     font-size: 2em;
     letter-spacing: .1rem;
     opacity: 0; /* make it transparent initially */
-    transition: opacity 6s;
+    transition: opacity 8s;
 }
 
 div#crypto {
