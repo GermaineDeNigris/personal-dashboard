@@ -49,7 +49,7 @@ h1.time {
     font-weight: 400;
     font-size: 2em;
     letter-spacing: .1rem;
-    opacity: 0; /* make it transparent initially */
+    opacity: -1; /* make it transparent initially */
     transition: opacity 8s;
 }
 
