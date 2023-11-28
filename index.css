@@ -20,9 +20,11 @@ body {
 }
 
 main {
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
 }
 
 div.top {
@@ -30,12 +32,10 @@ div.top {
     display: flex;
     justify-content: space-between;
     font-family: 'Mulish', sans-serif;
-
 }
 
 .center-content {
     text-align: center;
-    
 }
 
 h1.time {
@@ -45,12 +45,13 @@ h1.time {
 }
 
 #quote {
+    min-height: auto;
     margin-top: -152px;
     font-weight: 400;
     font-size: 2em;
     letter-spacing: .1rem;
-    opacity: -1; /* make it transparent initially */
-    transition: opacity 8s;
+    opacity: 1; /* make it transparent initially */
+    transition: opacity 4s;
 }
 
 div#crypto {
@@ -63,7 +64,7 @@ div#crypto {
 div#crypto-top {
     display: flex;
     align-items: center;
-    margin: 40px 5px 0 15px ;
+    margin: 40px 5px 0 15px;
 }
 
 #bitcoin-title {
