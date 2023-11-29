@@ -1,7 +1,7 @@
 let lastWeatherFetch = 0
 let lastBitcoinFetch = 0
 const refreshInterval = 60 * 60 * 1000
-const unsplashAccessKey = 'Y54aIZJPJRr2XLQw_72nDFVYvfa2lrplGNyslGHfYRqw'
+const unsplashAccessKey = '54aIZJPJRr2XLQw_72nDFVYvfa2lrplGNyslGHfYRqw'
 
 function fetchWeatherData(latitude, longitude) {
     const currentTime = new Date().getTime()
