@@ -119,7 +119,7 @@ setInterval(() => {
 }, refreshInterval)
 
 // Fetch Unsplash background image
-fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=water&client_id=${unsplashAccessKey}`)
+fetch(`https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=${unsplashAccessKey}`)
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`;
