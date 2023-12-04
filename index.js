@@ -30,11 +30,14 @@ function fetchWeatherData(latitude, longitude) {
 function updateWeatherUI(data) {
     const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     document.getElementById("weather").innerHTML = `
+        <div id="weather-info">
         <div id="top-weather">
             <img src=${iconUrl} alt="Weather Icon" id="weather-icon" />
-            <p id="temp">${Math.round(data.main.temp)} ° </p>
+            <p id="temp">${Math.round(data.main.temp)}°</p>
         </div>
         <p id="location">${data.name}, ${data.sys.country}</p>
+    </div>
+
     `
 }
 

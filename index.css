@@ -52,10 +52,8 @@ h1.time {
     transition: opacity 4s;
 }
 
-div#crypto {
+div#crypto, #location {
     font-size: 1.5rem;
-    display: block;
-    flex-direction: column;
     margin: -10px 0 0 15px;
 }
 
@@ -85,6 +83,6 @@ div#crypto-top {
     font-weight: 600;
 }
 
-#location {
-    margin: -15px 0 0 60px;
-}
+
+
+
