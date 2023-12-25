@@ -52,12 +52,18 @@ h1.time {
     transition: opacity 4s;
 }
 
-div#crypto, #location {
+div#crypto {
     font-size: 1.5rem;
     margin: -10px 0 0 15px;
 }
 
-div#crypto-top {
+div #location {
+    font-size: 1.5rem;
+    margin-top: -16px;
+    text-align: right;
+}
+
+div#crypto-top , div#img {
     display: flex;
     align-items: center;
     margin: 40px 5px 0 15px;
@@ -71,16 +77,23 @@ div#crypto-top {
 
 #top-weather {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     max-height: 110px;
-    margin: auto;
 }
 
+#weather {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    margin-right: 25px;
+  }
+    
 #temp {
     font-size: 2em;
-    margin-right: 30px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    text-align: right;
 }
 
 
